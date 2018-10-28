@@ -1,17 +1,12 @@
-
-def alphabet
-alphabet = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
-alphabet
-end
-
+ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 def should_be_swaped?(str1, str2)
   shorter = [str1, str2].sort_by{|el| el.length}.first
   longer = [str1, str2].sort_by{|el| el.length}.last
   i = 0
   while i < shorter.length
-    if alphabet.index[shorter[i]] < alphabet.index[longer[i]]
+    if ESPERANTO_ALPHABET.index(shorter[i]) < ESPERANTO_ALPHABET.index(longer[i])
       shorter == str1 ? (return false) : (return true)
-    elsif alphabet.index[shorter[i]] > alphabet.index[longer[i]]
+    elsif ESPERANTO_ALPHABET.index(shorter[i]) > ESPERANTO_ALPHABET.index(longer[i])
       shorter == str1 ? (return true) : (return false)
     end
 
@@ -51,3 +46,7 @@ def alphabetize(arr)
   end
   arr
 end
+arr = ["mi amas vin", "bonan matenon", "pacon", "ĉu vi parolas esperanton"]
+alphabetize(arr)
+
+

@@ -1,12 +1,12 @@
-ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
+alphabet = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
 def should_be_swaped?(str1, str2)
   shorter = [str1, str2].sort_by{|el| el.length}.first
   longer = [str1, str2].sort_by{|el| el.length}.last
   i = 0
   while i < shorter.length
-    if ESPERANTO_ALPHABET.index(shorter[i]) < ESPERANTO_ALPHABET.index(longer[i])
+    if alphabet.index(shorter[i]) < alphabet.index(longer[i])
       shorter == str1 ? (return false) : (return true)
-    elsif ESPERANTO_ALPHABET.index(shorter[i]) > ESPERANTO_ALPHABET.index(longer[i])
+    elsif alphabet.index(shorter[i]) > alphabet.index(longer[i])
       shorter == str1 ? (return true) : (return false)
     end
 

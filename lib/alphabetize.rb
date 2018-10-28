@@ -4,7 +4,7 @@ def should_be_swaped?(str1, str2)
   longer = [str1, str2].sort_by{|el| el.length}.last
   i = 0
   while i < shorter.length
-    if alphabet.index(shorter[i]) < alphabet.index(longer[i])
+    if alphabet.index[shorter[i]] < alphabet.index[longer[i]]
       shorter == str1 ? (return false) : (return true)
     elsif alphabet.index(shorter[i]) > alphabet.index(longer[i])
       shorter == str1 ? (return true) : (return false)

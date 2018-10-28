@@ -6,7 +6,7 @@ def should_be_swaped?(str1, str2)
   while i < shorter.length
     if alphabet.index[shorter[i]] < alphabet.index[longer[i]]
       shorter == str1 ? (return false) : (return true)
-    elsif alphabet.index(shorter[i]) > alphabet.index(longer[i])
+    elsif alphabet.index[shorter[i]] > alphabet.index[longer[i]]
       shorter == str1 ? (return true) : (return false)
     end
 

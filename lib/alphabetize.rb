@@ -1,27 +1,48 @@
-require 'pry'
+ESPERANTO_ALPHABET = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
+def should_be_swaped?(str1, str2)
+  shorter = [str1, str2].sort_by{|el| el.length}.first
+  longer = [str1, str2].sort_by{|el| el.length}.last
+  i = 0
+  while i < shorter.length
+    if ESPERANTO_ALPHABET.index(shorter[i]) < ESPERANTO_ALPHABET.index(longer[i])
+      shorter == str1 ? (return false) : (return true)
+    elsif ESPERANTO_ALPHABET.index(shorter[i]) > ESPERANTO_ALPHABET.index(longer[i])
+      shorter == str1 ? (return true) : (return false)
+    end
+
+    i += 1
+  end
+  return false
+end
+
+def check_arr(arr)
+  arr.each_with_index do |el, i|
+    if i != arr.length - 1
+      should_be_swaped?(el, arr[i+1]) ? (return false) : (next)
+    else
+      return true
+    end
+  end
+end
 
 def alphabetize(arr)
-  
-  esperanto_alphabet = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
-esperanto_array = esperanto_alphabet.split("")
-final_array = []
-final_element = nil
-    arr.sort
-    arr.sort_by do |element|
-      #arr is array of sentences
-      #element is individual sentences
-      
-      #holds an array of all letters in sentence
-      sentence_letters = []
-      
-      
-      sentence_letters = element.split("")
-      #sentence_letters is an array of each letter/space in the sentence
-      
-      sentence_letters.sort_by do |individual_letters|
-      esperanto_array.index(individual_letters)
-      
+  finished = false
+  i = 0
+  while !finished
     
+    if i != arr.length - 1
+      str1 = arr[i]
+      str2 = arr[i + 1]
+      if should_be_swaped?(str1, str2)
+        arr[i] = str2
+        arr[i + 1] = str1
       end
+      i += 1
+    else
+      finished = check_arr(arr)
+      i = 0
     end
+
+  end
+  arr
 end

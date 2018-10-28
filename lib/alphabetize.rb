@@ -1,4 +1,9 @@
+
+def alphabet
 alphabet = "abcĉdefgĝhĥijĵklmnoprsŝtuŭvz"
+alphabet
+end
+
 def should_be_swaped?(str1, str2)
   shorter = [str1, str2].sort_by{|el| el.length}.first
   longer = [str1, str2].sort_by{|el| el.length}.last
